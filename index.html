@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 50px;
+        }
+        img{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>5</h1>
+    <script>
+        let C = 100;
+        let K = 5
+        let R1,R2
+        R1 = (Math.floor(Math.random() * 24)+1)*50
+        R2 = (Math.floor(Math.random() * 24)+1)*50
+        let A = setInterval(()=>{
+            
+            const h1 = document.querySelector("h1")
+            C -= 10
+            //document.write(C)
+            h1.style.opacity = C+"%"
+            if(C === 0){
+                K -= 1
+                h1.textContent = K
+                C = 100
+                if(K >= -1){
+                    clearInterval(A)
+                    document.write(`<img src=http://placekitten.com/${R1}/${R2}>`)
+                }
+            }
+        },60)
+
+    </script>
+
+</body>
+</html>
